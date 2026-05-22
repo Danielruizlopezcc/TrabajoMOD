@@ -1,0 +1,46 @@
+Pricing
+{
+    saasName "Zoom"
+    version "2024"
+    currency "USD"
+    url "https://zoom.us/pricing"
+
+    Plan "Basic"
+    {
+        features {
+            Feature "VideoMeetings" { }
+        }
+        usageLimits {
+            Renewable "Max40minPerMeeting"
+            {
+                period Period { value 40 unit MIN }
+            },
+            NonRenewable "Max100Participants" { }
+        }
+    }
+
+    Plan "Pro"
+    {
+        features {
+            Feature "VideoMeetings" { },
+            Feature "Recording" { }
+        }
+    }
+
+    Plan "Business"
+    {
+        features {
+            Feature "VideoMeetings" { },
+            Feature "Recording" { },
+            Feature "AdminPortal" { }
+        }
+    }
+
+    AddOn "TranslatedCaptions"
+    {
+        description "Real-time translation"
+        features {
+            Feature "RealtimeTranslation" { }
+        }
+    }
+}

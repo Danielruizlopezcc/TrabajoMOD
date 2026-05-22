@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: lsi.us.es.mis.xtext.pricing.ui
+Bundle-ManifestVersion: 2
+Bundle-Name: lsi.us.es.mis.xtext.pricing.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: lsi.us.es.mis.xtext.pricing.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: lsi.us.es.mis.xtext.pricing,
+ lsi.us.es.mis.xtext.pricing.ide,
+ lsi.us.es.mis.pricing,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.14.300",
+ org.eclipse.ui.ide;bundle-version="3.18.500",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: lsi.us.es.mis.xtext.ui.quickfix,
+ lsi.us.es.mis.xtext.ui.contentassist,
+ lsi.us.es.mis.xtext.pricing.ui.internal
+Bundle-Activator: lsi.us.es.mis.xtext.pricing.ui.internal.PricingActivator
