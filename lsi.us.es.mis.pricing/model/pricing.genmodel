@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/lsi.us.es.mis.pricing/src" modelPluginID="lsi.us.es.mis.pricing"
+    modelName="Pricing" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>pricing.ecore</foreignModel>
+  <genPackages prefix="Pricing" disposableProviderFactory="true" ecorePackage="pricing.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pricing.ecore#//ValueType">
+      <genEnumLiterals ecoreEnumLiteral="pricing.ecore#//ValueType/NUMERIC"/>
+      <genEnumLiterals ecoreEnumLiteral="pricing.ecore#//ValueType/BOOLEAN"/>
+      <genEnumLiterals ecoreEnumLiteral="pricing.ecore#//ValueType/TEXT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pricing.ecore#//TimeUnit">
+      <genEnumLiterals ecoreEnumLiteral="pricing.ecore#//TimeUnit/SEC"/>
+      <genEnumLiterals ecoreEnumLiteral="pricing.ecore#//TimeUnit/MIN"/>
+      <genEnumLiterals ecoreEnumLiteral="pricing.ecore#//TimeUnit/HOUR"/>
+      <genEnumLiterals ecoreEnumLiteral="pricing.ecore#//TimeUnit/DAY"/>
+      <genEnumLiterals ecoreEnumLiteral="pricing.ecore#//TimeUnit/MONTH"/>
+      <genEnumLiterals ecoreEnumLiteral="pricing.ecore#//TimeUnit/YEAR"/>
+    </genEnums>
+    <genClasses ecoreClass="pricing.ecore#//Pricing">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//Pricing/saasName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//Pricing/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//Pricing/currency"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//Pricing/url"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//Pricing/createdAt"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//Pricing/tags"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pricing.ecore#//Pricing/plans"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pricing.ecore#//Pricing/addOns"/>
+    </genClasses>
+    <genClasses ecoreClass="pricing.ecore#//Plan">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//Plan/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//Plan/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//Plan/price"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pricing.ecore#//Plan/features"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pricing.ecore#//Plan/usageLimits"/>
+    </genClasses>
+    <genClasses ecoreClass="pricing.ecore#//AddOn">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//AddOn/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//AddOn/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//AddOn/price"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pricing.ecore#//AddOn/features"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pricing.ecore#//AddOn/usageLimits"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pricing.ecore#//AddOn/availableFor"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pricing.ecore#//AddOn/dependsOn"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pricing.ecore#//AddOn/excludes"/>
+    </genClasses>
+    <genClasses ecoreClass="pricing.ecore#//Feature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//Feature/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//Feature/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//Feature/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//Feature/expression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//Feature/serverExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//Feature/defaultValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//Feature/valueType"/>
+    </genClasses>
+    <genClasses ecoreClass="pricing.ecore#//UsageLimit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//UsageLimit/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//UsageLimit/defaultValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//UsageLimit/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//UsageLimit/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//UsageLimit/unit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//UsageLimit/valueType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//UsageLimit/limit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pricing.ecore#//UsageLimit/linkedTo"/>
+    </genClasses>
+    <genClasses ecoreClass="pricing.ecore#//Period">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//Period/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//Period/unit"/>
+    </genClasses>
+    <genClasses ecoreClass="pricing.ecore#//Renewable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pricing.ecore#//Renewable/period"/>
+    </genClasses>
+    <genClasses ecoreClass="pricing.ecore#//NonRenewable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pricing.ecore#//NonRenewable/trackable"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pricing:Pricing
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:pricing="http://lsi.us.es/mis/pricing"
+    saasName="Zoom">
+  <plans name="Basic">
+    <features
+        name="Video meetings"/>
+    <usageLimits
+        xsi:type="pricing:Renewable"
+        name="Max 40min/meeting"
+        linkedTo="//@plans.0/@features.0">
+      <period/>
+    </usageLimits>
+    <usageLimits
+        xsi:type="pricing:NonRenewable"
+        name="Max 100 participants"
+        linkedTo="//@plans.0/@features.0"/>
+  </plans>
+  <plans name="Pro">
+    <features
+        name="Video meetings"/>
+    <features
+        name="Recording"/>
+  </plans>
+  <plans name="Business">
+    <features
+        name="Video meetings"/>
+    <features
+        name="Recording"/>
+    <features
+        name="Admin portal"/>
+  </plans>
+  <addOns name="Translated Captions"
+      usageLimits="//@plans.0/@usageLimits.0"
+      availableFor="//@plans.2"
+      dependsOn="//@addOns.0"
+      excludes="//@addOns.0">
+    <features
+        name="Real-time translation"/>
+  </addOns>
+</pricing:Pricing>

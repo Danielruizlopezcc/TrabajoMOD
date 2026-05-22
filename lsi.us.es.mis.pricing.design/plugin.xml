@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+  <extension point="org.eclipse.sirius.componentization">
+    <component name="pricing"
+               id="lsi.us.es.mis.pricing.design"
+               class="lsi.us.es.mis.pricing.design.Activator">
+      <viewpoint id="pricing"/>
+    </component>
+  </extension>
+</plugin>

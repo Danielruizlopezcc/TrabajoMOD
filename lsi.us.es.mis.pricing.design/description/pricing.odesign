@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="pricing" version="12.0.0.2017041100">
+  <ownedViewpoints name="pricing" modelFileExtension="ecore">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Pricing Diagram" initialisation="true" domainClass="pricing::Pricing">
+      <metamodel href="../../lsi.us.es.mis.pricing/model/pricing.ecore#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="PricingNode" semanticCandidatesExpression="var:self" domainClass="pricing::Pricing">
+          <style xsi:type="style:BundledImageDescription" labelSize="12" showIcon="false" labelExpression="feature:saasName" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="PlansEdge" sourceMapping="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@nodeMappings[name='PricingNode']" targetMapping="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@containerMappings[name='PlanContainer']" targetFinderExpression="feature:plans">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="AddOnsEdge" sourceMapping="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@nodeMappings[name='PricingNode']" targetMapping="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@containerMappings[name='AddOnContainer']" targetFinderExpression="feature:addOns">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="UsageLimitsEdgeAddOnRenewable" sourceMapping="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@containerMappings[name='AddOnContainer']" targetMapping="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@containerMappings[name='PlanContainer']/@subNodeMappings[name='RenewablePlanNode']" targetFinderExpression="feature:usageLimits">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="UsageLimitsEdgeAddOnNonRenewable" sourceMapping="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@containerMappings[name='AddOnContainer']" targetMapping="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@containerMappings[name='PlanContainer']/@subNodeMappings[name='NonRenewablePlanNode']" targetFinderExpression="feature:usageLimits">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="AvailableForEdge" sourceMapping="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@containerMappings[name='AddOnContainer']" targetMapping="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@containerMappings[name='PlanContainer']" targetFinderExpression="feature:availableFor">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="DependsOnEdge" sourceMapping="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@containerMappings[name='AddOnContainer']" targetMapping="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@containerMappings[name='AddOnContainer']" targetFinderExpression="feature:dependsOn">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ExcludesEdge" sourceMapping="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@containerMappings[name='AddOnContainer']" targetMapping="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@containerMappings[name='AddOnContainer']" targetFinderExpression="feature:excludes">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="LinkedToEdgeRenewable" sourceMapping="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@containerMappings[name='PlanContainer']/@subNodeMappings[name='RenewablePlanNode']" targetMapping="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@containerMappings[name='PlanContainer']/@subNodeMappings[name='FeaturePlanNode']" targetFinderExpression="feature:linkedTo">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="LinkedToEdgeNonRenewable" sourceMapping="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@containerMappings[name='PlanContainer']/@subNodeMappings[name='NonRenewablePlanNode']" targetMapping="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@containerMappings[name='PlanContainer']/@subNodeMappings[name='FeaturePlanNode']" targetFinderExpression="feature:linkedTo">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="PlanContainer" semanticCandidatesExpression="feature:plans" domainClass="pricing::Plan">
+          <subNodeMappings name="FeaturePlanNode" semanticCandidatesExpression="feature:features" domainClass="pricing::Feature">
+            <style xsi:type="style:BundledImageDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="RenewablePlanNode" semanticCandidatesExpression="aql:self.usageLimits->select(u | u.oclIsKindOf(pricing::Renewable))" domainClass="pricing::Renewable">
+            <style xsi:type="style:BundledImageDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="NonRenewablePlanNode" semanticCandidatesExpression="aql:self.usageLimits->filter(pricing::NonRenewable)" domainClass="pricing::NonRenewable">
+            <style xsi:type="style:BundledImageDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="AddOnContainer" semanticCandidatesExpression="feature:addOns" domainClass="pricing::AddOn">
+          <subNodeMappings name="FeatureAddOnNode" semanticCandidatesExpression="feature:features" domainClass="pricing::Feature">
+            <style xsi:type="style:BundledImageDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Pricing Tools">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Plan" containerMappings="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@containerMappings[name='PlanContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pricing::Plan" referenceName="plans"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create AddOn" containerMappings="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@containerMappings[name='AddOnContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pricing::AddOn" referenceName="addOns"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create FeatureAddOn" nodeMappings="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@containerMappings[name='AddOnContainer']/@subNodeMappings[name='FeatureAddOnNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pricing::Feature" referenceName="features"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Feature" nodeMappings="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@containerMappings[name='PlanContainer']/@subNodeMappings[name='FeaturePlanNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.plans->first()">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pricing::Feature" referenceName="features"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create NonRenewable" nodeMappings="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@containerMappings[name='PlanContainer']/@subNodeMappings[name='NonRenewablePlanNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pricing::NonRenewable" referenceName="usageLimits"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Create Renewable" nodeMappings="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@containerMappings[name='PlanContainer']/@subNodeMappings[name='RenewablePlanNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="pricing::Renewable" referenceName="usageLimits"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Create AvailableFor" edgeMappings="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@edgeMappings[name='AvailableForEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="availableFor" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Create DependsOn" edgeMappings="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@edgeMappings[name='DependsOnEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="dependsOn" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Create Excludes" edgeMappings="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@edgeMappings[name='ExcludesEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="excludes" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Create LinkedTo" edgeMappings="//@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@edgeMappings[name='LinkedToEdgeRenewable'] //@ownedViewpoints[name='pricing']/@ownedRepresentations[name='Pricing%20Diagram']/@defaultLayer/@edgeMappings[name='LinkedToEdgeNonRenewable']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="linkedTo" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Create FeatureAddOn">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="features" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="lsi.us.es.mis.pricing.design.Services"/>
+  </ownedViewpoints>
+</description:Group>
