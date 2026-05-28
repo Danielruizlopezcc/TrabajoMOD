@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated pricing -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="pricing.presentation.PricingModelWizardID"
+            name="%_UI_PricingModelWizard_label"
+            class="pricing.presentation.PricingModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PricingModelFile.gif">
+         <description>%_UI_PricingModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated pricing -->
+      <editor
+            id="pricing.presentation.PricingEditorID"
+            name="%_UI_PricingEditor_label"
+            icon="icons/full/obj16/PricingModelFile.gif"
+            extensions="pricing"
+            class="pricing.presentation.PricingEditor"
+            contributorClass="pricing.presentation.PricingActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

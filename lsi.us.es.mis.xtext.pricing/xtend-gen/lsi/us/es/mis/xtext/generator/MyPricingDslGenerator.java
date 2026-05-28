@@ -3,19 +3,31 @@
  */
 package lsi.us.es.mis.xtext.generator;
 
+import com.google.inject.Inject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
 
 /**
- * Generates code from your model files on save.
- * 
- * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
+ * Generador principal. Delega en los generadores TXT e YAML.
+ * Patrón Delegation + Inyección de dependencias (slide 51-53).
  */
 @SuppressWarnings("all")
 public class MyPricingDslGenerator extends AbstractGenerator {
+  @Inject
+  private MyPricingDslTxtGenerator genTxt;
+
+  @Inject
+  private MyPricingDslYAMLGenerator genYAML;
+
+  @Inject
+  private MyPricingDslHTMLGenerator genHTML;
+
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    this.genTxt.doGenerate(resource, fsa, context);
+    this.genYAML.doGenerate(resource, fsa, context);
+    this.genHTML.doGenerate(resource, fsa, context);
   }
 }

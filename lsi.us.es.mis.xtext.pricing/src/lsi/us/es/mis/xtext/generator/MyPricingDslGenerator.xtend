@@ -7,19 +7,26 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import com.google.inject.Inject
 
 /**
- * Generates code from your model files on save.
- * 
- * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
+ * Generador principal. Delega en los generadores TXT e YAML.
+ * Patrón Delegation + Inyección de dependencias (slide 51-53).
  */
 class MyPricingDslGenerator extends AbstractGenerator {
 
-	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
-	}
+    // Dependency Injection
+    @Inject MyPricingDslTxtGenerator genTxt
+
+    @Inject MyPricingDslYAMLGenerator genYAML
+    
+    @Inject MyPricingDslHTMLGenerator genHTML
+    
+    
+
+    override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+        genTxt.doGenerate(resource, fsa, context)
+        genYAML.doGenerate(resource, fsa, context)
+        genHTML.doGenerate(resource, fsa, context)
+    }
 }
