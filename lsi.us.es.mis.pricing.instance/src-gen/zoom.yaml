@@ -1,0 +1,72 @@
+pricing:
+  saasName: Zoom
+  version: "2024"
+  currency: USD
+  url: https://zoom.us/pricing
+  plans:
+    - plan: &Basic
+      name: "Basic"
+      price: 0.0
+      features:
+        - name: "Video meetings"
+          valueType: NUMERIC
+      usageLimits:
+        - renewable: &Max40minmeeting
+          name: "Max 40min/meeting"
+          valueType: NUMERIC
+          period:
+            value: 1
+            unit: HOUR
+        - nonRenewable: &Max100participants
+          name: "Max 100 participants"
+          valueType: NUMERIC
+          trackable: false
+    - plan: &Pro
+      name: "Pro"
+      price: 9.95
+      features:
+        - name: "Video meetings"
+          valueType: NUMERIC
+        - name: "Recording"
+          valueType: NUMERIC
+      usageLimits:
+        - renewable: &Max40minmeeting
+          name: "Max 40min/meeting"
+          valueType: NUMERIC
+          period:
+            value: 1
+            unit: HOUR
+        - nonRenewable: &Max100participants
+          name: "Max 100 participants"
+          valueType: NUMERIC
+          trackable: false
+    - plan: &Business
+      name: "Business"
+      price: 29.95
+      features:
+        - name: "Video meetings"
+          valueType: NUMERIC
+        - name: "Recording"
+          valueType: NUMERIC
+        - name: "Admin portal"
+          valueType: NUMERIC
+      usageLimits:
+        - renewable: &Max40minmeeting
+          name: "Max 40min/meeting"
+          valueType: NUMERIC
+          period:
+            value: 1
+            unit: HOUR
+        - nonRenewable: &Max100participants
+          name: "Max 100 participants"
+          valueType: NUMERIC
+          trackable: false
+  addOns:
+    - addOn: &TranslatedCaptions
+      name: "Translated Captions"
+      price: 3.95
+      description: "Real-time translation captions"
+      availableFor: [*Business]
+      features:
+        - name: "Real-time translation"
+          valueType: NUMERIC

@@ -1,0 +1,41 @@
+This file has been created automatically
+
+=== PRICING SPECIFICATION ===
+SaaS:     Zoom
+Version:  2024
+Currency: USD
+URL:      https://zoom.us/pricing
+This pricing has:
+  3 plans,
+  1 add-on,
+  6 features (total across all plans),
+  6 usage limits (total across all plans)
+
+--- PLANS ---
+Plan: Basic — Free
+  Features (1):
+    · Video meetings [NUMERIC]
+  Usage Limits (2):
+    · Renewable — Max 40min/meeting · renews every 1 HOUR
+    · NonRenewable — Max 100 participants
+Plan: Pro — 9.95 /month
+  Features (2):
+    · Video meetings [NUMERIC]
+    · Recording [NUMERIC]
+  Usage Limits (2):
+    · Renewable — Max 40min/meeting · renews every 1 HOUR
+    · NonRenewable — Max 100 participants
+Plan: Business — 29.95 /month
+  Features (3):
+    · Video meetings [NUMERIC]
+    · Recording [NUMERIC]
+    · Admin portal [NUMERIC]
+  Usage Limits (2):
+    · Renewable — Max 40min/meeting · renews every 1 HOUR
+    · NonRenewable — Max 100 participants
+--- ADD-ONS ---
+Add-On: Translated Captions — 3.95 /month
+  Description: Real-time translation captions
+  Available for: Business
+  Features:
+    · Real-time translation [NUMERIC]

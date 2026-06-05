@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Zoom — Pricing</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f8f9fb; color: #1a1a2e; }
+  header { background: #1a1a2e; color: #fff; padding: 3rem 2rem 2.5rem; text-align: center; }
+  header h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -1.5px; }
+  header p { margin-top: .5rem; color: #a0aec0; font-size: 1rem; }
+  header .meta { display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  header .meta span { font-size: .78rem; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: 999px; padding: .3rem .9rem; color: #cbd5e0; }
+  .stats { display: flex; justify-content: center; gap: 2rem; padding: 1.8rem 2rem; background: #fff; border-bottom: 1px solid #e8eaf0; flex-wrap: wrap; }
+  .stat { text-align: center; padding: .5rem 1.5rem; }
+  .stat .n { font-size: 2rem; font-weight: 700; color: #4f46e5; line-height: 1; }
+  .stat .l { font-size: .72rem; color: #718096; text-transform: uppercase; letter-spacing: .06em; margin-top: .3rem; }
+  section { max-width: 1100px; margin: 2.5rem auto; padding: 0 1.5rem; }
+  section > h2 { font-size: .85rem; font-weight: 700; color: #718096; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 1.5rem; padding-bottom: .5rem; border-bottom: 2px solid #e8eaf0; }
+  .plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+  .plan-card { background: #fff; border: 1.5px solid #e8eaf0; border-radius: 16px; padding: 1.75rem; display: flex; flex-direction: column; }
+  .plan-card.featured { border-color: #4f46e5; border-width: 2px; }
+  .badge { display: inline-block; background: #eef2ff; color: #4338ca; font-size: .68rem; font-weight: 700; border-radius: 999px; padding: .2rem .8rem; margin-bottom: .75rem; letter-spacing: .04em; text-transform: uppercase; }
+  .plan-name { font-size: 1.6rem; font-weight: 800; color: #1a1a2e; letter-spacing: -.5px; }
+  .plan-price { font-size: 1rem; font-weight: 600; margin: .4rem 0 1.25rem; padding: .35rem .75rem; background: #eef2ff; color: #3730a3; border-radius: 8px; display: inline-block; }
+  .plan-price.free { background: #f0fdf4; color: #166534; }
+  .section-label { font-size: .68rem; font-weight: 700; color: #a0aec0; text-transform: uppercase; letter-spacing: .1em; margin: .9rem 0 .5rem; padding-top: .9rem; border-top: 1px solid #f0f2f7; }
+  .section-label.first { border-top: none; margin-top: 0; padding-top: 0; }
+  .feat-list { list-style: none; }
+  .feat-list li { display: flex; align-items: center; gap: .55rem; font-size: .875rem; padding: .32rem 0; border-bottom: 1px solid #f8f9fb; }
+  .feat-list li:last-child { border-bottom: none; }
+  .feat-list li.has { color: #1e293b; }
+  .feat-list li.has .icon { color: #4f46e5; font-weight: 800; font-size: .9rem; width: 16px; text-align: center; flex-shrink: 0; }
+  .feat-list li.missing { color: #c1c9d4; }
+  .feat-list li.missing .icon { color: #dde3eb; font-weight: 700; font-size: .9rem; width: 16px; text-align: center; flex-shrink: 0; }
+  .limits-wrap { display: flex; flex-direction: column; gap: .5rem; }
+  .limit-tag { display: flex; flex-direction: column; gap: .25rem; font-size: .8rem; border-radius: 10px; padding: .5rem .7rem; font-weight: 500; }
+  .limit-tag .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .limit-top { display: flex; align-items: center; gap: .4rem; }
+  .limit-tag.renewable { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+  .limit-tag.renewable .dot { background: #3b82f6; }
+  .limit-tag.nonrenewable { background: #fdf4ff; color: #7e22ce; border: 1px solid #e9d5ff; }
+  .limit-tag.nonrenewable .dot { background: #a855f7; }
+  .type-label { font-size: .62rem; font-weight: 700; opacity: .7; text-transform: uppercase; letter-spacing: .04em; }
+  .limit-name { font-weight: 600; }
+  .resets { font-size: .72rem; opacity: .75; padding-left: 1.1rem; }
+  .addon-ref { font-size: .75rem; background: #fefce8; color: #92400e; border: 1px solid #fde68a; border-radius: 999px; padding: .2rem .65rem; font-weight: 500; display: inline-block; margin: .15rem; }
+  .addons-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
+  .addon-card { background: #fff; border: 1.5px solid #e8eaf0; border-radius: 14px; padding: 1.5rem; }
+  .addon-card h3 { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; }
+  .addon-price { font-size: 1rem; font-weight: 600; margin: .5rem 0 .75rem; display: inline-block; padding: .3rem .7rem; border-radius: 8px; background: #f0fdf4; color: #166534; }
+  .addon-price.paid { background: #eef2ff; color: #3730a3; }
+  .addon-desc { font-size: .85rem; color: #718096; margin-bottom: .9rem; }
+  .avail-plans { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .4rem; }
+  .avail-plan-pill { display: flex; align-items: center; gap: .4rem; background: #1a1a2e; color: #fff; border-radius: 8px; padding: .35rem .75rem; font-size: .8rem; font-weight: 600; }
+  .avail-plan-pill .dot { width: 7px; height: 7px; border-radius: 50%; background: #4f46e5; flex-shrink: 0; }
+  .pill-list { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .4rem; }
+  .pill { font-size: .75rem; padding: .25rem .65rem; border-radius: 999px; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+  footer { text-align: center; padding: 2.5rem 1rem; color: #a0aec0; font-size: .8rem; border-top: 1px solid #e8eaf0; margin-top: 3rem; }
+  footer strong { color: #4f46e5; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Zoom</h1>
+  <p>Simple, transparent pricing.</p>
+  <div class="meta">
+    <span>v2024</span>
+    <span>USD</span>
+    <span>https://zoom.us/pricing</span>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><div class="n">3</div><div class="l">Plans</div></div>
+  <div class="stat"><div class="n">1</div><div class="l">Add-on</div></div>
+  <div class="stat"><div class="n">3</div><div class="l">Features</div></div>
+  <div class="stat"><div class="n">2</div><div class="l">Usage limits</div></div>
+</div>
+
+<section>
+  <h2>Plans</h2>
+  <div class="plans-grid">
+    <div class="plan-card">
+          <div class="plan-name">Basic</div>
+          <div class="plan-price free">Free</div>
+          <div class="section-label first">Features</div>
+          <ul class="feat-list">
+            <li class="has"><span class="icon">&#10003;</span>Video meetings</li>
+            <li class="missing"><span class="icon">&#10005;</span>Recording</li>
+            <li class="missing"><span class="icon">&#10005;</span>Admin portal</li>
+          </ul>
+          <div class="section-label">Usage limits</div>
+          <div class="limits-wrap">
+            <div class="limit-tag renewable">
+                      <div class="limit-top"><span class="dot"></span><span class="type-label">Renew</span><span class="limit-name">Max 40min/meeting</span></div>
+                      <div class="resets">&#x21BA; resets every 1 HOUR</div>
+                    </div>
+            <div class="limit-tag nonrenewable">
+                      <div class="limit-top"><span class="dot"></span><span class="type-label">Non-renew</span><span class="limit-name">Max 100 participants</span></div>
+                    </div>
+          </div>
+        </div><div class="plan-card">
+          <div class="plan-name">Pro</div>
+          <div class="plan-price">$9.95 <span style="font-size:.8rem;font-weight:400;opacity:.7">/month</span></div>
+          <div class="section-label first">Features</div>
+          <ul class="feat-list">
+            <li class="has"><span class="icon">&#10003;</span>Video meetings</li>
+            <li class="has"><span class="icon">&#10003;</span>Recording</li>
+            <li class="missing"><span class="icon">&#10005;</span>Admin portal</li>
+          </ul>
+          <div class="section-label">Usage limits</div>
+          <div class="limits-wrap">
+            <div class="limit-tag renewable">
+                      <div class="limit-top"><span class="dot"></span><span class="type-label">Renew</span><span class="limit-name">Max 40min/meeting</span></div>
+                      <div class="resets">&#x21BA; resets every 1 HOUR</div>
+                    </div>
+            <div class="limit-tag nonrenewable">
+                      <div class="limit-top"><span class="dot"></span><span class="type-label">Non-renew</span><span class="limit-name">Max 100 participants</span></div>
+                    </div>
+          </div>
+        </div><div class="plan-card featured">
+          <div class="badge">Most popular</div>
+          <div class="plan-name">Business</div>
+          <div class="plan-price">$29.95 <span style="font-size:.8rem;font-weight:400;opacity:.7">/month</span></div>
+          <div class="section-label first">Features</div>
+          <ul class="feat-list">
+            <li class="has"><span class="icon">&#10003;</span>Video meetings</li>
+            <li class="has"><span class="icon">&#10003;</span>Recording</li>
+            <li class="has"><span class="icon">&#10003;</span>Admin portal</li>
+          </ul>
+          <div class="section-label">Usage limits</div>
+          <div class="limits-wrap">
+            <div class="limit-tag renewable">
+                      <div class="limit-top"><span class="dot"></span><span class="type-label">Renew</span><span class="limit-name">Max 40min/meeting</span></div>
+                      <div class="resets">&#x21BA; resets every 1 HOUR</div>
+                    </div>
+            <div class="limit-tag nonrenewable">
+                      <div class="limit-top"><span class="dot"></span><span class="type-label">Non-renew</span><span class="limit-name">Max 100 participants</span></div>
+                    </div>
+          </div>
+          <div class="section-label">Add-ons available</div>
+          <div style="margin-top:.2rem">
+            <span class="addon-ref">Translated Captions</span>
+          </div>
+        </div>
+  </div>
+</section>
+
+<section>
+  <h2>Add-ons</h2>
+  <div class="addons-grid">
+    <div class="addon-card">
+          <h3>Translated Captions</h3>
+          <div class="addon-price paid">$3.95 <span style="font-size:.8rem;font-weight:400;opacity:.7">/month</span></div>
+          <div class="addon-desc">Real-time translation captions</div>
+          <div class="section-label first">Available for plans</div>
+          <div class="avail-plans">
+            <div class="avail-plan-pill"><span class="dot"></span>Business</div>
+          </div>
+          <div class="section-label">Features</div>
+          <div class="pill-list">
+            <span class="pill">Real-time translation</span>
+          </div>
+        </div>
+  </div>
+</section>
+
+<footer>
+  Generated automatically from the <strong>Zoom</strong> pricing model
+  &nbsp;·&nbsp; Model-to-Text transformation with Xtend
+</footer>
+
+</body>
+</html>
